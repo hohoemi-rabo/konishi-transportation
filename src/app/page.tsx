@@ -1,17 +1,12 @@
 import Header from "@/components/Header";
+import HeroSection from "@/components/HeroSection";
 
 export default function Home() {
   return (
     <>
       <Header />
       <main>
-        {/* Hero Section */}
-        <section id="hero" className="min-h-screen flex items-center justify-center bg-gradient-section">
-          <div className="text-center text-white">
-            <h1 className="text-5xl font-bold mb-4">ヒーローセクション</h1>
-            <p className="text-xl">チケット05で実装予定</p>
-          </div>
-        </section>
+        <HeroSection />
 
         {/* Service Section */}
         <section id="service" className="min-h-screen flex items-center justify-center bg-white dark:bg-dark-bg">
