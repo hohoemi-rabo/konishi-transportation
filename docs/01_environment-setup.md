@@ -24,18 +24,18 @@
 
 ## Todo
 
-- [ ] framer-motionのインストール
-- [ ] zustandのインストール
-- [ ] lucide-reactのインストール
-- [ ] clsxとtailwind-mergeのインストール
-- [ ] 開発サーバーの起動確認
-- [ ] 依存関係の動作確認
+- [x] framer-motionのインストール
+- [x] zustandのインストール
+- [x] lucide-reactのインストール
+- [x] clsxとtailwind-mergeのインストール
+- [x] 開発サーバーの起動確認
+- [x] 依存関係の動作確認
 
 ## 完了条件
 
-- [ ] すべてのパッケージが正常にインストールされている
-- [ ] `npm run dev`で開発サーバーが起動する
-- [ ] エラーなく動作することを確認
+- [x] すべてのパッケージが正常にインストールされている
+- [x] `npm run dev`で開発サーバーが起動する
+- [x] エラーなく動作することを確認
 
 ## 参照
 - REQUIREMENTS.md - 技術仕様 (6.1)
