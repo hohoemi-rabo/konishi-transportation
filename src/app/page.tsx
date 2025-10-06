@@ -4,6 +4,7 @@ import ServiceSection from "@/components/ServiceSection";
 import SustainabilitySection from "@/components/SustainabilitySection";
 import CompanySection from "@/components/CompanySection";
 import AccessSection from "@/components/AccessSection";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
         <CompanySection />
         <AccessSection />
       </main>
+      <Footer />
     </>
   );
 }
