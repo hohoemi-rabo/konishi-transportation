@@ -39,8 +39,11 @@ export default function HeroSection() {
         className="absolute inset-0 z-0"
       >
         <div className="absolute inset-0 bg-gradient-hero z-10" />
-        {/* 仮背景（ユーザーが後で画像を追加） */}
-        <div className="absolute inset-0 bg-[#0a1f1f] bg-[linear-gradient(rgba(10,31,31,0.8),rgba(13,38,38,0.9)),url('https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=1920')] bg-cover bg-center" />
+        {/* 背景画像 */}
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: "url('/images/hero-background.jpg')" }}
+        />
       </motion.div>
 
       {/* コンテンツ */}
@@ -91,43 +94,43 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="grid grid-cols-1 sm:grid-cols-3 gap-2 max-w-lg"
+          className="grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-2xl"
         >
           {/* CO2削減率 */}
-          <div className="bg-white/10 backdrop-blur-md rounded-lg p-2.5 border border-white/20 hover:bg-white/20 transition-all duration-300">
-            <div className="text-[9px] text-gray-300 mb-0.5 uppercase tracking-wider">
+          <div className="bg-white/10 backdrop-blur-md rounded-lg p-4 border border-white/20 hover:bg-white/20 transition-all duration-300">
+            <div className="text-[10px] text-gray-300 mb-1 uppercase tracking-wider">
               CO2削減率
             </div>
-            <div className="text-xl font-bold text-white font-mono mb-0.5">
-              24<span className="text-sm">%</span>
+            <div className="text-3xl font-bold text-white font-mono mb-1">
+              24<span className="text-lg">%</span>
             </div>
-            <div className="text-[8px] text-gray-400 leading-tight">
+            <div className="text-[9px] text-gray-400 leading-tight">
               2019年比で29.6%削減（想定値）
             </div>
           </div>
 
           {/* エコドライブ実施率 */}
-          <div className="bg-white/10 backdrop-blur-md rounded-lg p-2.5 border border-white/20 hover:bg-white/20 transition-all duration-300">
-            <div className="text-[9px] text-gray-300 mb-0.5 uppercase tracking-wider">
+          <div className="bg-white/10 backdrop-blur-md rounded-lg p-4 border border-white/20 hover:bg-white/20 transition-all duration-300">
+            <div className="text-[10px] text-gray-300 mb-1 uppercase tracking-wider">
               エコドライブ実施率
             </div>
-            <div className="text-xl font-bold text-white font-mono mb-0.5">
-              72<span className="text-sm">%</span>
+            <div className="text-3xl font-bold text-white font-mono mb-1">
+              72<span className="text-lg">%</span>
             </div>
-            <div className="text-[8px] text-gray-400 leading-tight">
+            <div className="text-[9px] text-gray-400 leading-tight">
               全ドライバーがエコドライブを実践
             </div>
           </div>
 
           {/* 事故率 */}
-          <div className="bg-white/10 backdrop-blur-md rounded-lg p-2.5 border border-white/20 hover:bg-white/20 transition-all duration-300">
-            <div className="text-[9px] text-gray-300 mb-0.5 uppercase tracking-wider">
+          <div className="bg-white/10 backdrop-blur-md rounded-lg p-4 border border-white/20 hover:bg-white/20 transition-all duration-300">
+            <div className="text-[10px] text-gray-300 mb-1 uppercase tracking-wider">
               事故率
             </div>
-            <div className="text-xl font-bold text-white font-mono mb-0.5">
-              0.3<span className="text-sm">%</span>
+            <div className="text-3xl font-bold text-white font-mono mb-1">
+              0.3<span className="text-lg">%</span>
             </div>
-            <div className="text-[8px] text-gray-400 leading-tight">
+            <div className="text-[9px] text-gray-400 leading-tight">
               業界平均を大きく下回る安全性
             </div>
           </div>
