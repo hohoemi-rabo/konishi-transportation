@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
+import ServiceSection from "@/components/ServiceSection";
 
 export default function Home() {
   return (
@@ -7,14 +8,7 @@ export default function Home() {
       <Header />
       <main>
         <HeroSection />
-
-        {/* Service Section */}
-        <section id="service" className="min-h-screen flex items-center justify-center bg-white dark:bg-dark-bg">
-          <div className="text-center">
-            <h2 className="text-4xl font-bold mb-4">事業内容</h2>
-            <p className="text-lg">チケット06で実装予定</p>
-          </div>
-        </section>
+        <ServiceSection />
 
         {/* Sustainability Section */}
         <section id="sustainability" className="min-h-screen flex items-center justify-center bg-gradient-section">
