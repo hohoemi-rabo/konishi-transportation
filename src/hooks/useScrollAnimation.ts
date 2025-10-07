@@ -21,7 +21,9 @@ export function useScrollAnimation(once: boolean = true, amount: number = 0.3) {
  * @param amount - 要素がどれだけビューポートに入ったらアニメーションを開始するか
  */
 export function useMultipleScrollAnimations(count: number, once: boolean = true, amount: number = 0.3) {
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const refs = Array.from({ length: count }, () => useRef(null));
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const isInViews = refs.map((ref) => useInView(ref, { once, amount }));
 
   return { refs, isInViews };

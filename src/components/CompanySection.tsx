@@ -2,7 +2,6 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
-import { Award, Shield, Leaf, CheckCircle } from "lucide-react";
 
 // カウントアップフック
 function useCountUp(end: number, duration: number = 2000, isInView: boolean) {
