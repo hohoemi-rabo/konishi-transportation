@@ -113,6 +113,38 @@ body {
   background: #0d9488;
 }
 
+/* タッチ操作の最適化 */
+@media (hover: none) and (pointer: coarse) {
+  /* タッチデバイス専用のスタイル */
+  button,
+  a {
+    -webkit-tap-highlight-color: rgba(20, 184, 166, 0.3);
+    touch-action: manipulation;
+  }
+
+  /* タッチターゲットサイズの最小化を防ぐ */
+  button,
+  a,
+  input,
+  select,
+  textarea {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* モバイルでの横スクロール防止 */
+body {
+  overflow-x: hidden;
+}
+
+/* モバイルビューポートの高さ対応 */
+@supports (height: 100dvh) {
+  .min-h-screen {
+    min-height: 100dvh;
+  }
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
@@ -128,5 +160,46 @@ body {
 
   .section-padding {
     @apply px-4 py-16 sm:px-6 lg:px-8 lg:py-24;
+  }
+
+  /* レスポンシブコンテナ */
+  .container-responsive {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* レスポンシブグリッド */
+  .grid-responsive-1-2-3 {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8;
+  }
+
+  .grid-responsive-1-2-4 {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8;
+  }
+
+  /* レスポンシブタイポグラフィ */
+  .heading-responsive {
+    @apply text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold;
+  }
+
+  .subheading-responsive {
+    @apply text-lg sm:text-xl md:text-2xl font-semibold;
+  }
+
+  .body-responsive {
+    @apply text-sm sm:text-base md:text-lg;
+  }
+
+  .caption-responsive {
+    @apply text-xs sm:text-sm;
+  }
+
+  /* モバイル専用のスペーシング */
+  .mobile-spacing {
+    @apply space-y-4 md:space-y-6 lg:space-y-8;
+  }
+
+  /* タッチフレンドリーなボタン */
+  .btn-touch {
+    @apply min-h-[44px] min-w-[44px] px-4 py-2 sm:px-6 sm:py-3;
   }
 }
