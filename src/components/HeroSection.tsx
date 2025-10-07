@@ -4,6 +4,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { useRef } from "react";
 import { useRipple } from "@/hooks/useRipple";
+import Image from "next/image";
 
 export default function HeroSection() {
   const ref = useRef<HTMLElement>(null);
@@ -45,9 +46,14 @@ export default function HeroSection() {
       >
         <div className="absolute inset-0 bg-gradient-to-b from-[#0a1f1f]/95 to-[#0d2626]/90 z-10" />
         {/* 背景画像 */}
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: "url('/images/hero-background.jpg')" }}
+        <Image
+          src="/images/hero-background.jpg"
+          alt="小西運送株式会社"
+          fill
+          priority
+          quality={90}
+          className="object-cover"
+          sizes="100vw"
         />
       </motion.div>
 
