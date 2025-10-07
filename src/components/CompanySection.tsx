@@ -115,7 +115,7 @@ export default function CompanySection() {
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="bg-dark-bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-6 shimmer-overlay"
+            className="bg-dark-bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-6 shimmer-overlay animate-glow-pulse"
           >
             {/* 社長写真 */}
             <div className="w-full aspect-[3/4] bg-gradient-to-br from-gray-700 to-gray-800 rounded-xl mb-4 overflow-hidden">
@@ -135,7 +135,7 @@ export default function CompanySection() {
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="bg-dark-bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-6 shimmer-overlay"
+            className="bg-dark-bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-6 shimmer-overlay animate-glow-pulse"
           >
             <h3 className="text-sm font-semibold text-white mb-6">数字で見る小西運送</h3>
             <div className="space-y-6">
@@ -150,7 +150,7 @@ export default function CompanySection() {
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="bg-dark-bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-6 shimmer-overlay"
+            className="bg-dark-bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-6 shimmer-overlay animate-glow-pulse"
           >
             <h3 className="text-sm font-semibold text-white mb-6">取得認証・資格</h3>
             <div className="space-y-4">
@@ -174,7 +174,7 @@ export default function CompanySection() {
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.6, delay: 0.5 }}
-            className="bg-dark-bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-6 shimmer-overlay"
+            className="bg-dark-bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-6 shimmer-overlay animate-glow-pulse"
           >
             <h3 className="text-sm font-semibold text-white mb-6">ハイライト</h3>
             <div className="space-y-4">

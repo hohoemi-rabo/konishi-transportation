@@ -144,7 +144,7 @@ export default function AccessSection() {
             initial={{ opacity: 0, x: 30 }}
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 30 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="bg-dark-bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-2 overflow-hidden"
+            className="bg-dark-bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-2 overflow-hidden animate-glow-pulse shimmer-overlay"
           >
             <div className="w-full h-full min-h-[400px] rounded-xl overflow-hidden">
               <iframe

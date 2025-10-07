@@ -89,7 +89,7 @@ export default function ServiceSection() {
                 isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }
               }
               transition={{ duration: 0.6, delay: index * 0.15 }}
-              className="group relative bg-dark-bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-6 hover:bg-dark-bg-card/80 hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-1 shimmer-overlay"
+              className="group relative bg-dark-bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-6 hover:bg-dark-bg-card/80 hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-1 shimmer-overlay animate-glow-pulse"
             >
               {/* アイコン */}
               <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary/20 transition-colors shimmer-overlay">
