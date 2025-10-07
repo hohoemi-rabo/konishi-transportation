@@ -71,7 +71,7 @@ export default function ServiceSection() {
           <span className="text-primary text-xs sm:text-sm uppercase tracking-wider font-semibold">
             SERVICE
           </span>
-          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mt-3 mb-6">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mt-3 mb-6 shimmer-overlay">
             幅広いニーズに応える物流サービス
           </h2>
           <p className="text-[11px] sm:text-xs md:text-sm text-gray-300 max-w-3xl">
@@ -89,10 +89,10 @@ export default function ServiceSection() {
                 isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }
               }
               transition={{ duration: 0.6, delay: index * 0.15 }}
-              className="group relative bg-dark-bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-6 hover:bg-dark-bg-card/80 hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-1"
+              className="group relative bg-dark-bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-6 hover:bg-dark-bg-card/80 hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-1 shimmer-overlay"
             >
               {/* アイコン */}
-              <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary/20 transition-colors">
+              <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary/20 transition-colors shimmer-overlay">
                 <service.icon className="w-9 h-9 text-primary" />
               </div>
 

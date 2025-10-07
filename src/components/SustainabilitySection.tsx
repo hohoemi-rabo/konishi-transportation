@@ -89,7 +89,7 @@ export default function SustainabilitySection() {
           <span className="text-primary text-xs sm:text-sm uppercase tracking-wider font-semibold">
             SUSTAINABILITY
           </span>
-          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mt-3 mb-6 leading-tight">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mt-3 mb-6 shimmer-overlay leading-tight">
             環境と共生する、持続可能な物流への挑戦
           </h2>
           <p className="text-[11px] sm:text-xs md:text-sm text-gray-300 max-w-3xl">
@@ -104,7 +104,7 @@ export default function SustainabilitySection() {
             initial={{ opacity: 0, x: -30 }}
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="bg-dark-bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-6 h-[420px]"
+            className="bg-dark-bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-6 h-[420px] animate-glow-pulse shimmer-overlay"
           >
             <h3 className="text-sm text-gray-400 mb-12 uppercase tracking-wider">
               CO2排出量推移
@@ -184,7 +184,7 @@ function ProgressBar({
       initial={{ opacity: 0, x: 30 }}
       animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 30 }}
       transition={{ duration: 0.6, delay: 0.4 + index * 0.15 }}
-      className="bg-dark-bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-6"
+      className="bg-dark-bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-6 animate-glow-pulse shimmer-overlay"
     >
       {/* タイトルとパーセンテージ */}
       <div className="flex items-center justify-between mb-3">

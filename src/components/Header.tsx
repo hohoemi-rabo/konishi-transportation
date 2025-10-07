@@ -66,6 +66,15 @@ export default function Header() {
         animate={{ y: 0 }}
         transition={{ duration: 0.3 }}
       >
+        {/* グラデーションボーダー（スクロール時のみ表示） */}
+        {scrolled && (
+          <motion.div
+            className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-primary to-transparent"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5 }}
+          />
+        )}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
@@ -74,24 +83,30 @@ export default function Header() {
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center gap-8">
               {navItems.map((item) => (
-                <button
+                <motion.button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className={`text-sm font-medium transition-colors relative ${
+                  className={`text-sm font-medium transition-all duration-300 relative group ${
                     activeSection === item.id
                       ? "text-primary"
                       : "text-gray-300 hover:text-primary"
                   }`}
+                  whileHover={{ y: -2 }}
+                  transition={{ duration: 0.2 }}
                 >
                   {item.label}
+                  {/* グロー効果 */}
+                  <span className="absolute inset-0 blur-md opacity-0 group-hover:opacity-50 transition-opacity duration-300 bg-primary/30 rounded-full" />
+
+                  {/* アクティブインジケーター */}
                   {activeSection === item.id && (
                     <motion.div
-                      className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary"
+                      className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary shadow-[0_0_8px_rgba(20,184,166,0.6)]"
                       layoutId="activeSection"
                       transition={{ duration: 0.3 }}
                     />
                   )}
-                </button>
+                </motion.button>
               ))}
             </nav>
 

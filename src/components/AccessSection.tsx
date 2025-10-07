@@ -3,6 +3,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Phone, MapPin, Clock } from "lucide-react";
+import { useRipple } from "@/hooks/useRipple";
 
 export default function AccessSection() {
   const ref = useRef(null);
@@ -14,6 +15,10 @@ export default function AccessSection() {
 
   // Google Maps URL（実際の住所でエンコード）
   const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;
+
+  // リップルエフェクト
+  const { ripples: ripples1, addRipple: addRipple1 } = useRipple();
+  const { ripples: ripples2, addRipple: addRipple2 } = useRipple();
 
   return (
     <section
@@ -38,7 +43,7 @@ export default function AccessSection() {
           <span className="text-primary text-xs sm:text-sm uppercase tracking-wider font-semibold">
             ACCESS
           </span>
-          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mt-3 mb-6 leading-tight">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mt-3 mb-6 leading-tight shimmer-overlay">
             地域の皆さまと共に。お気軽にお問い合わせください。
           </h2>
         </motion.div>
@@ -50,7 +55,7 @@ export default function AccessSection() {
             initial={{ opacity: 0, x: -30 }}
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="bg-dark-bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-6 lg:p-8"
+            className="bg-dark-bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-6 lg:p-8 animate-glow-pulse shimmer-overlay"
           >
             <h3 className="text-lg font-bold text-white mb-6">本社所在地</h3>
 
@@ -89,19 +94,47 @@ export default function AccessSection() {
             <div className="flex flex-col sm:flex-row gap-3">
               <a
                 href={`tel:${phone.replace(/-/g, "")}`}
-                className="flex-1 bg-primary hover:bg-primary-dark text-white px-6 py-3 rounded-full font-medium text-sm transition-all duration-300 hover:scale-105 hover:shadow-xl flex items-center justify-center gap-2"
+                onClick={addRipple1}
+                className="flex-1 relative overflow-hidden bg-primary hover:bg-primary-dark text-white px-6 py-3 rounded-full font-medium text-sm transition-all duration-300 hover:scale-105 hover:shadow-xl flex items-center justify-center gap-2"
               >
                 <Phone className="w-4 h-4" />
                 電話する
+                {/* リップルエフェクト */}
+                {ripples1.map((ripple) => (
+                  <span
+                    key={ripple.id}
+                    className="absolute bg-white/30 rounded-full animate-ripple pointer-events-none"
+                    style={{
+                      left: ripple.x,
+                      top: ripple.y,
+                      width: ripple.size,
+                      height: ripple.size,
+                    }}
+                  />
+                ))}
               </a>
               <a
                 href={mapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 bg-gray-700 hover:bg-gray-600 text-white px-6 py-3 rounded-full font-medium text-sm transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2"
+                onClick={addRipple2}
+                className="flex-1 relative overflow-hidden bg-gray-700 hover:bg-gray-600 text-white px-6 py-3 rounded-full font-medium text-sm transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2"
               >
                 <MapPin className="w-4 h-4" />
                 GOOGLE マップ
+                {/* リップルエフェクト */}
+                {ripples2.map((ripple) => (
+                  <span
+                    key={ripple.id}
+                    className="absolute bg-white/30 rounded-full animate-ripple pointer-events-none"
+                    style={{
+                      left: ripple.x,
+                      top: ripple.y,
+                      width: ripple.size,
+                      height: ripple.size,
+                    }}
+                  />
+                ))}
               </a>
             </div>
           </motion.div>

@@ -3,6 +3,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { useRef } from "react";
+import { useRipple } from "@/hooks/useRipple";
 
 export default function HeroSection() {
   const ref = useRef<HTMLElement>(null);
@@ -14,6 +15,10 @@ export default function HeroSection() {
   // パララックス効果
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
   const opacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
+
+  // リップルエフェクト
+  const { ripples: ripples1, addRipple: addRipple1 } = useRipple();
+  const { ripples: ripples2, addRipple: addRipple2 } = useRipple();
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -73,17 +78,49 @@ export default function HeroSection() {
             {/* CTAボタン */}
             <div className="flex flex-col sm:flex-row gap-2 mb-8">
               <button
-                onClick={() => scrollToSection("service")}
-                className="group bg-primary hover:bg-primary-dark text-white px-4 py-2 rounded-full font-medium text-xs transition-all duration-300 hover:scale-105 hover:shadow-xl flex items-center gap-1.5 justify-center"
+                onClick={(e) => {
+                  addRipple1(e);
+                  scrollToSection("service");
+                }}
+                className="group relative overflow-hidden bg-primary hover:bg-primary-dark text-white px-4 py-2 rounded-full font-medium text-xs transition-all duration-300 hover:scale-105 hover:shadow-xl flex items-center gap-1.5 justify-center"
               >
                 今すぐ詳しく
                 <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+                {/* リップルエフェクト */}
+                {ripples1.map((ripple) => (
+                  <span
+                    key={ripple.id}
+                    className="absolute bg-white/30 rounded-full animate-ripple pointer-events-none"
+                    style={{
+                      left: ripple.x,
+                      top: ripple.y,
+                      width: ripple.size,
+                      height: ripple.size,
+                    }}
+                  />
+                ))}
               </button>
               <button
-                onClick={() => scrollToSection("sustainability")}
-                className="group border-2 border-gray-800 hover:bg-gray-800 hover:text-white text-white px-4 py-2 rounded-full font-medium text-xs transition-all duration-300 hover:scale-105 flex items-center gap-1.5 justify-center"
+                onClick={(e) => {
+                  addRipple2(e);
+                  scrollToSection("sustainability");
+                }}
+                className="group relative overflow-hidden border-2 border-gray-800 hover:bg-gray-800 hover:text-white text-white px-4 py-2 rounded-full font-medium text-xs transition-all duration-300 hover:scale-105 flex items-center gap-1.5 justify-center"
               >
                 環境への取り組み
+                {/* リップルエフェクト */}
+                {ripples2.map((ripple) => (
+                  <span
+                    key={ripple.id}
+                    className="absolute bg-white/30 rounded-full animate-ripple pointer-events-none"
+                    style={{
+                      left: ripple.x,
+                      top: ripple.y,
+                      width: ripple.size,
+                      height: ripple.size,
+                    }}
+                  />
+                ))}
               </button>
             </div>
           </motion.div>
@@ -97,7 +134,7 @@ export default function HeroSection() {
           className="grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-2xl"
         >
           {/* CO2削減率 */}
-          <div className="bg-dark-bg-card/80 backdrop-blur-md rounded-lg p-4 border border-primary/20 hover:border-primary/40 hover:shadow-lg transition-all duration-300">
+          <div className="bg-dark-bg-card/80 backdrop-blur-md rounded-lg p-4 border border-primary/20 hover:border-primary/40 transition-all duration-300 animate-glow-pulse">
             <div className="text-[10px] text-gray-400 mb-1 uppercase tracking-wider">
               CO2削減率
             </div>
@@ -110,7 +147,7 @@ export default function HeroSection() {
           </div>
 
           {/* エコドライブ実施率 */}
-          <div className="bg-dark-bg-card/80 backdrop-blur-md rounded-lg p-4 border border-primary/20 hover:border-primary/40 hover:shadow-lg transition-all duration-300">
+          <div className="bg-dark-bg-card/80 backdrop-blur-md rounded-lg p-4 border border-primary/20 hover:border-primary/40 transition-all duration-300 animate-glow-pulse">
             <div className="text-[10px] text-gray-400 mb-1 uppercase tracking-wider">
               エコドライブ実施率
             </div>
@@ -123,7 +160,7 @@ export default function HeroSection() {
           </div>
 
           {/* 事故率 */}
-          <div className="bg-dark-bg-card/80 backdrop-blur-md rounded-lg p-4 border border-primary/20 hover:border-primary/40 hover:shadow-lg transition-all duration-300">
+          <div className="bg-dark-bg-card/80 backdrop-blur-md rounded-lg p-4 border border-primary/20 hover:border-primary/40 transition-all duration-300 animate-glow-pulse">
             <div className="text-[10px] text-gray-400 mb-1 uppercase tracking-wider">
               事故率
             </div>
