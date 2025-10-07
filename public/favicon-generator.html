@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Favicon Generator</title>
+</head>
+<body>
+    <h1>ファビコン生成ガイド</h1>
+    <p>favicon.svg をベースに以下のファイルを生成してください：</p>
+    <ul>
+        <li><strong>favicon.ico</strong> - 32x32px（ブラウザタブ用）</li>
+        <li><strong>apple-touch-icon.png</strong> - 180x180px（iOS用）</li>
+        <li><strong>android-chrome-192x192.png</strong> - 192x192px（Android用）</li>
+        <li><strong>android-chrome-512x512.png</strong> - 512x512px（PWA用）</li>
+    </ul>
+
+    <h2>オンラインツールで生成する方法：</h2>
+    <ol>
+        <li><a href="https://realfavicongenerator.net/" target="_blank">RealFaviconGenerator</a> を開く</li>
+        <li>favicon.svg をアップロード</li>
+        <li>「Generate your Favicons and HTML code」をクリック</li>
+        <li>生成されたファイルをダウンロードして public/ フォルダに配置</li>
+    </ol>
+
+    <h2>SVGプレビュー：</h2>
+    <img src="/favicon.svg" width="128" height="128" style="border: 1px solid #ccc; padding: 20px; background: white;">
+    <img src="/favicon.svg" width="128" height="128" style="border: 1px solid #ccc; padding: 20px; background: #0a1f1f;">
+</body>
+</html>

@@ -1,0 +1,10 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景 -->
+  <rect width="64" height="64" rx="12" fill="#0a1f1f"/>
+
+  <!-- K -->
+  <path d="M14 14 L14 50 L20 50 L20 34 L32 50 L40 50 L26 32 L40 14 L32 14 L20 30 L20 14 Z" fill="#14b8a6" stroke="#14b8a6" stroke-width="0.5"/>
+
+  <!-- T -->
+  <path d="M42 14 L42 20 L48 20 L48 50 L54 50 L54 20 L60 20 L60 14 Z" fill="#14b8a6" stroke="#14b8a6" stroke-width="0.5"/>
+</svg>
