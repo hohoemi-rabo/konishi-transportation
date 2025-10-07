@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import Logo from "./Logo";
-import DarkModeToggle from "./DarkModeToggle";
 
 const navItems = [
   { id: "hero", label: "トップ" },
@@ -60,7 +59,7 @@ export default function Header() {
       <motion.header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled
-            ? "bg-white/95 dark:bg-dark-bg/95 backdrop-blur-md shadow-lg"
+            ? "bg-[#0a1f1f]/95 backdrop-blur-md shadow-lg"
             : "bg-transparent"
         }`}
         initial={{ y: -100 }}
@@ -80,8 +79,8 @@ export default function Header() {
                   onClick={() => scrollToSection(item.id)}
                   className={`text-sm font-medium transition-colors relative ${
                     activeSection === item.id
-                      ? "text-primary dark:text-primary"
-                      : "text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary"
+                      ? "text-primary"
+                      : "text-gray-300 hover:text-primary"
                   }`}
                 >
                   {item.label}
@@ -96,23 +95,18 @@ export default function Header() {
               ))}
             </nav>
 
-            {/* Right Section */}
-            <div className="flex items-center gap-4">
-              <DarkModeToggle />
-
-              {/* Mobile Menu Button */}
-              <button
-                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="md:hidden p-2 text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors"
-                aria-label="メニュー"
-              >
-                {mobileMenuOpen ? (
-                  <X className="w-6 h-6" />
-                ) : (
-                  <Menu className="w-6 h-6" />
-                )}
-              </button>
-            </div>
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="md:hidden p-2 text-gray-300 hover:text-primary transition-colors"
+              aria-label="メニュー"
+            >
+              {mobileMenuOpen ? (
+                <X className="w-6 h-6" />
+              ) : (
+                <Menu className="w-6 h-6" />
+              )}
+            </button>
           </div>
         </div>
       </motion.header>
@@ -132,7 +126,7 @@ export default function Header() {
 
             {/* Menu Panel */}
             <motion.div
-              className="fixed top-20 left-0 right-0 bg-white dark:bg-dark-bg shadow-lg z-40 md:hidden"
+              className="fixed top-20 left-0 right-0 bg-[#0a1f1f] shadow-lg z-40 md:hidden"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
@@ -143,10 +137,10 @@ export default function Header() {
                   <motion.button
                     key={item.id}
                     onClick={() => scrollToSection(item.id)}
-                    className={`text-left py-4 px-4 text-base font-medium transition-colors border-b border-border last:border-b-0 ${
+                    className={`text-left py-4 px-4 text-base font-medium transition-colors border-b border-gray-700 last:border-b-0 ${
                       activeSection === item.id
                         ? "text-primary bg-primary/5"
-                        : "text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-dark-bg-lighter"
+                        : "text-gray-300 hover:bg-[#0d2626]"
                     }`}
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}

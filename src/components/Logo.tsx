@@ -9,10 +9,10 @@ export default function Logo() {
       </div>
       {/* Company Name */}
       <div className="flex flex-col">
-        <span className="text-lg font-bold text-foreground dark:text-white leading-tight">
+        <span className="text-lg font-bold text-white leading-tight">
           小西運送株式会社
         </span>
-        <span className="text-[10px] text-gray-600 dark:text-gray-400 uppercase tracking-wider leading-tight">
+        <span className="text-[10px] text-gray-400 uppercase tracking-wider leading-tight">
           Konishi Transport
         </span>
       </div>

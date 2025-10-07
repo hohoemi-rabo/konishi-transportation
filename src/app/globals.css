@@ -74,10 +74,43 @@
   --gradient-section: linear-gradient(180deg, #0a1f1f 0%, #0d2626 100%);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
+
+/* パフォーマンス最適化 */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* アニメーション要素のパフォーマンス最適化 */
+[data-animate] {
+  will-change: transform, opacity;
+}
+
+/* スクロールバーのスタイリング（オプション） */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a1f1f;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #14b8a6;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0d9488;
 }
 
 @layer utilities {

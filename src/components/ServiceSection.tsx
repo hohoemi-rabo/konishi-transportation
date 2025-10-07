@@ -118,9 +118,6 @@ export default function ServiceSection() {
                   </li>
                 ))}
               </ul>
-
-              {/* ホバー時の装飾 */}
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
             </motion.div>
           ))}
         </div>
