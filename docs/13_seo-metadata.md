@@ -41,15 +41,15 @@
 
 ## Todo
 
-- [ ] layout.tsxにメタデータ設定
+- [x] layout.tsxにメタデータ設定
 - [ ] OGP画像の作成（1200x630px）
 - [ ] Favicon生成（複数サイズ）
-- [ ] 構造化データJSON-LDの作成
-- [ ] robots.txtの作成
-- [ ] sitemap.xmlの作成
-- [ ] メタディスクリプションの最適化
-- [ ] titleタグの最適化
-- [ ] canonical URLの設定
+- [x] 構造化データJSON-LDの作成
+- [x] robots.txtの作成
+- [x] sitemap.xmlの作成
+- [x] メタディスクリプションの最適化
+- [x] titleタグの最適化
+- [x] canonical URLの設定
 - [ ] SEO検証ツールでチェック
 
 ## 構造化データ例
