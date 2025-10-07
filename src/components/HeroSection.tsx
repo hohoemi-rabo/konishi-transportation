@@ -66,7 +66,7 @@ export default function HeroSection() {
             <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-6 leading-tight">
               クリーンでハイテクな物流で、
               <br />
-              <span className="gradient-text">次の社会を支える</span>
+              <span className="gradient-text text-2xl sm:text-3xl md:text-4xl lg:text-5xl">次の社会を支える</span>
             </h1>
 
             {/* サブコピー */}
@@ -76,16 +76,16 @@ export default function HeroSection() {
             </p>
 
             {/* CTAボタン */}
-            <div className="flex flex-col sm:flex-row gap-2 mb-8">
+            <div className="flex flex-col sm:flex-row gap-3 mb-8">
               <button
                 onClick={(e) => {
                   addRipple1(e);
                   scrollToSection("service");
                 }}
-                className="group relative overflow-hidden bg-primary hover:bg-primary-dark text-white px-4 py-2 rounded-full font-medium text-xs transition-all duration-300 hover:scale-105 hover:shadow-xl flex items-center gap-1.5 justify-center"
+                className="group relative overflow-hidden bg-primary hover:bg-primary-dark text-white px-6 py-3 rounded-full font-medium text-sm transition-all duration-300 hover:scale-105 hover:shadow-xl flex items-center gap-2 justify-center"
               >
                 今すぐ詳しく
-                <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 {/* リップルエフェクト */}
                 {ripples1.map((ripple) => (
                   <span
@@ -105,7 +105,7 @@ export default function HeroSection() {
                   addRipple2(e);
                   scrollToSection("sustainability");
                 }}
-                className="group relative overflow-hidden border-2 border-gray-800 hover:bg-gray-800 hover:text-white text-white px-4 py-2 rounded-full font-medium text-xs transition-all duration-300 hover:scale-105 flex items-center gap-1.5 justify-center"
+                className="group relative overflow-hidden bg-accent-green hover:bg-[#059669] text-white px-6 py-3 rounded-full font-medium text-sm transition-all duration-300 hover:scale-105 hover:shadow-xl flex items-center gap-2 justify-center"
               >
                 環境への取り組み
                 {/* リップルエフェクト */}
@@ -131,43 +131,43 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-2xl"
+          className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl"
         >
           {/* CO2削減率 */}
-          <div className="bg-dark-bg-card/80 backdrop-blur-md rounded-lg p-4 border border-primary/20 hover:border-primary/40 transition-all duration-300 animate-glow-pulse">
-            <div className="text-[10px] text-gray-400 mb-1 uppercase tracking-wider">
+          <div className="bg-dark-bg-card/80 backdrop-blur-md rounded-lg p-5 border border-primary/20 hover:border-primary/40 transition-all duration-300 animate-glow-pulse shimmer-overlay">
+            <div className="text-[11px] text-gray-400 mb-2 uppercase tracking-wider">
               CO2削減率
             </div>
-            <div className="text-3xl font-bold text-primary font-mono mb-1">
-              24<span className="text-lg">%</span>
+            <div className="text-4xl font-bold text-primary font-mono mb-2">
+              24<span className="text-xl">%</span>
             </div>
-            <div className="text-[9px] text-gray-400 leading-tight">
+            <div className="text-[10px] text-gray-400 leading-tight">
               2019年比で29.6%削減（想定値）
             </div>
           </div>
 
           {/* エコドライブ実施率 */}
-          <div className="bg-dark-bg-card/80 backdrop-blur-md rounded-lg p-4 border border-primary/20 hover:border-primary/40 transition-all duration-300 animate-glow-pulse">
-            <div className="text-[10px] text-gray-400 mb-1 uppercase tracking-wider">
+          <div className="bg-dark-bg-card/80 backdrop-blur-md rounded-lg p-5 border border-primary/20 hover:border-primary/40 transition-all duration-300 animate-glow-pulse shimmer-overlay">
+            <div className="text-[11px] text-gray-400 mb-2 uppercase tracking-wider">
               エコドライブ実施率
             </div>
-            <div className="text-3xl font-bold text-primary font-mono mb-1">
-              72<span className="text-lg">%</span>
+            <div className="text-4xl font-bold text-primary font-mono mb-2">
+              72<span className="text-xl">%</span>
             </div>
-            <div className="text-[9px] text-gray-400 leading-tight">
+            <div className="text-[10px] text-gray-400 leading-tight">
               全ドライバーがエコドライブを実践
             </div>
           </div>
 
           {/* 事故率 */}
-          <div className="bg-dark-bg-card/80 backdrop-blur-md rounded-lg p-4 border border-primary/20 hover:border-primary/40 transition-all duration-300 animate-glow-pulse">
-            <div className="text-[10px] text-gray-400 mb-1 uppercase tracking-wider">
+          <div className="bg-dark-bg-card/80 backdrop-blur-md rounded-lg p-5 border border-primary/20 hover:border-primary/40 transition-all duration-300 animate-glow-pulse shimmer-overlay">
+            <div className="text-[11px] text-gray-400 mb-2 uppercase tracking-wider">
               事故率
             </div>
-            <div className="text-3xl font-bold text-primary font-mono mb-1">
-              0.3<span className="text-lg">%</span>
+            <div className="text-4xl font-bold text-primary font-mono mb-2">
+              0.3<span className="text-xl">%</span>
             </div>
-            <div className="text-[9px] text-gray-400 leading-tight">
+            <div className="text-[10px] text-gray-400 leading-tight">
               業界平均を大きく下回る安全性
             </div>
           </div>
