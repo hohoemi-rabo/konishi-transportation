@@ -38,7 +38,7 @@ export default function HeroSection() {
         style={{ y }}
         className="absolute inset-0 z-0"
       >
-        <div className="absolute inset-0 bg-gradient-hero z-10" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0a1f1f]/95 to-[#0d2626]/90 z-10" />
         {/* 背景画像 */}
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -65,8 +65,8 @@ export default function HeroSection() {
             </h1>
 
             {/* サブコピー */}
-            <p className="text-[11px] sm:text-xs md:text-sm text-gray-200 mb-6 leading-relaxed">
-              小西運送会社は、環境に配慮したクリーンな企業イメージと、最先端のテクノロジーを駆使した物流サービスで、
+            <p className="text-[11px] sm:text-xs md:text-sm text-gray-300 mb-6 leading-relaxed">
+              小西運送株式会社は、環境に配慮したクリーンな企業イメージと、最先端のテクノロジーを駆使した物流サービスで、
               地域の皆さまと共に持続可能な未来を創造します。
             </p>
 
@@ -81,7 +81,7 @@ export default function HeroSection() {
               </button>
               <button
                 onClick={() => scrollToSection("sustainability")}
-                className="group border-2 border-white hover:bg-white hover:text-dark-bg text-white px-4 py-2 rounded-full font-medium text-xs transition-all duration-300 hover:scale-105 flex items-center gap-1.5 justify-center"
+                className="group border-2 border-gray-800 hover:bg-gray-800 hover:text-white text-white px-4 py-2 rounded-full font-medium text-xs transition-all duration-300 hover:scale-105 flex items-center gap-1.5 justify-center"
               >
                 環境への取り組み
               </button>
@@ -97,11 +97,11 @@ export default function HeroSection() {
           className="grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-2xl"
         >
           {/* CO2削減率 */}
-          <div className="bg-white/10 backdrop-blur-md rounded-lg p-4 border border-white/20 hover:bg-white/20 transition-all duration-300">
-            <div className="text-[10px] text-gray-300 mb-1 uppercase tracking-wider">
+          <div className="bg-dark-bg-card/80 backdrop-blur-md rounded-lg p-4 border border-primary/20 hover:border-primary/40 hover:shadow-lg transition-all duration-300">
+            <div className="text-[10px] text-gray-400 mb-1 uppercase tracking-wider">
               CO2削減率
             </div>
-            <div className="text-3xl font-bold text-white font-mono mb-1">
+            <div className="text-3xl font-bold text-primary font-mono mb-1">
               24<span className="text-lg">%</span>
             </div>
             <div className="text-[9px] text-gray-400 leading-tight">
@@ -110,11 +110,11 @@ export default function HeroSection() {
           </div>
 
           {/* エコドライブ実施率 */}
-          <div className="bg-white/10 backdrop-blur-md rounded-lg p-4 border border-white/20 hover:bg-white/20 transition-all duration-300">
-            <div className="text-[10px] text-gray-300 mb-1 uppercase tracking-wider">
+          <div className="bg-dark-bg-card/80 backdrop-blur-md rounded-lg p-4 border border-primary/20 hover:border-primary/40 hover:shadow-lg transition-all duration-300">
+            <div className="text-[10px] text-gray-400 mb-1 uppercase tracking-wider">
               エコドライブ実施率
             </div>
-            <div className="text-3xl font-bold text-white font-mono mb-1">
+            <div className="text-3xl font-bold text-primary font-mono mb-1">
               72<span className="text-lg">%</span>
             </div>
             <div className="text-[9px] text-gray-400 leading-tight">
@@ -123,11 +123,11 @@ export default function HeroSection() {
           </div>
 
           {/* 事故率 */}
-          <div className="bg-white/10 backdrop-blur-md rounded-lg p-4 border border-white/20 hover:bg-white/20 transition-all duration-300">
-            <div className="text-[10px] text-gray-300 mb-1 uppercase tracking-wider">
+          <div className="bg-dark-bg-card/80 backdrop-blur-md rounded-lg p-4 border border-primary/20 hover:border-primary/40 hover:shadow-lg transition-all duration-300">
+            <div className="text-[10px] text-gray-400 mb-1 uppercase tracking-wider">
               事故率
             </div>
-            <div className="text-3xl font-bold text-white font-mono mb-1">
+            <div className="text-3xl font-bold text-primary font-mono mb-1">
               0.3<span className="text-lg">%</span>
             </div>
             <div className="text-[9px] text-gray-400 leading-tight">

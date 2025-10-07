@@ -70,7 +70,7 @@ export default function SustainabilitySection() {
     <section
       id="sustainability"
       ref={ref}
-      className="relative py-20 lg:py-32 bg-gradient-to-b from-[#0f2d2d] via-[#0d2626] to-[#0a1f1f] overflow-hidden"
+      className="relative py-20 lg:py-32 bg-gradient-to-b from-[#0a1f1f] via-[#0d2626] to-[#0f2d2d] overflow-hidden"
     >
       {/* 背景装飾 */}
       <div className="absolute inset-0 opacity-20">

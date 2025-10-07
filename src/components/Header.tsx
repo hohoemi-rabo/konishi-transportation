@@ -59,7 +59,7 @@ export default function Header() {
       <motion.header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled
-            ? "bg-[#0a1f1f]/95 backdrop-blur-md shadow-lg"
+            ? "bg-dark-bg/95 backdrop-blur-md shadow-lg shadow-primary/5"
             : "bg-transparent"
         }`}
         initial={{ y: -100 }}
@@ -126,7 +126,7 @@ export default function Header() {
 
             {/* Menu Panel */}
             <motion.div
-              className="fixed top-20 left-0 right-0 bg-[#0a1f1f] shadow-lg z-40 md:hidden"
+              className="fixed top-20 left-0 right-0 bg-dark-bg/95 backdrop-blur-md shadow-lg z-40 md:hidden"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
@@ -137,10 +137,10 @@ export default function Header() {
                   <motion.button
                     key={item.id}
                     onClick={() => scrollToSection(item.id)}
-                    className={`text-left py-4 px-4 text-base font-medium transition-colors border-b border-gray-700 last:border-b-0 ${
+                    className={`text-left py-4 px-4 text-base font-medium transition-colors border-b border-border last:border-b-0 ${
                       activeSection === item.id
-                        ? "text-primary bg-primary/5"
-                        : "text-gray-300 hover:bg-[#0d2626]"
+                        ? "text-primary bg-primary/10"
+                        : "text-gray-300 hover:bg-dark-bg-card/50"
                     }`}
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
