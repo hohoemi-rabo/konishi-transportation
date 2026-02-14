@@ -21,8 +21,8 @@ npm run lint     # ESLint実行
 
 - **Next.js 15** (App Router) + **React 19** + **TypeScript 5** (strict mode)
 - **Tailwind CSS v3.4** + CSS Modules（スタイリング）
-- **Framer Motion v11**（アニメーション、未インストール）
-- **Zustand v4**（状態管理、未インストール）
+- **Framer Motion v12**（アニメーション）
+- **Lucide React**（アイコン）
 - Turbopackによるdev/build高速化
 - ESLint v9 フラットコンフィグ形式
 
@@ -30,10 +30,46 @@ npm run lint     # ESLint実行
 
 - App Router (`src/app/`) を使用。Pages Router は使用しない
 - パスエイリアス: `@/*` → `./src/*`
-- コンポーネント配置先: `src/components/`
 - 言語: 日本語サイト（`lang="ja"`）
 - API Routes不要（静的LP、バックエンド無し）
 - CTA: 電話番号のみ（059-328-5248）、お問い合わせフォーム無し
+
+### ディレクトリ構成
+
+```
+src/
+├── app/
+│   ├── layout.tsx          # ルートレイアウト（Header, Footer, ScrollToTop）
+│   ├── page.tsx            # トップページ（各セクション組み立て）
+│   └── globals.css         # デザイントークン・ユーティリティ
+├── components/
+│   ├── Header.tsx          # 固定ヘッダー（スクロール透過→白、モバイルメニュー）
+│   ├── Footer.tsx          # フッター（Server Component）
+│   ├── sections/           # 各セクションコンポーネント
+│   │   ├── HeroSection.tsx
+│   │   ├── ServicesSection.tsx
+│   │   ├── EnvironmentSection.tsx
+│   │   ├── VehiclesSection.tsx
+│   │   ├── CompanySection.tsx
+│   │   └── AccessSection.tsx
+│   └── ui/                 # 汎用UIコンポーネント
+│       ├── ParticleNetwork.tsx  # Canvas パーティクルアニメーション
+│       ├── CountUp.tsx          # 数値カウントアップ
+│       └── ScrollToTop.tsx      # ページトップボタン
+├── lib/
+│   └── animations.ts       # Framer Motion 共通バリアント
+public/
+└── images/
+    ├── hero-desktop.jpg    # ヒーロー背景（PC用）
+    └── hero-mobile.jpg     # ヒーロー背景（モバイル用）
+```
+
+### コンポーネント設計方針
+
+- **Server Component**: `Footer.tsx` — インタラクションなし、JSバンドル増加なし
+- **Client Component (`'use client'`)**: Header, 各Section, UI部品 — Framer Motion / イベントハンドラ使用
+- 共通アニメーション: `src/lib/animations.ts` の `staggerContainer` / `staggerItem` / `defaultViewport` を再利用
+- 共通CSSクラス: `section-container` / `section-padding` / `section-title` / `section-subtitle`
 
 ## Next.js 15 App Router ベストプラクティス
 
@@ -125,20 +161,20 @@ const ParticleBackground = dynamic(
 
 ### ファイル一覧
 
-| # | ファイル | 内容 |
-|---|---------|------|
-| 01 | `docs/01-design-system-foundation.md` | デザインシステム・基盤構築 |
-| 02 | `docs/02-layout-header.md` | 共通レイアウト・固定ヘッダー |
-| 03 | `docs/03-hero-section.md` | ヒーローセクション |
-| 04 | `docs/04-services-section.md` | サービス紹介セクション |
-| 05 | `docs/05-environment-section.md` | 環境への取り組みセクション |
-| 06 | `docs/06-vehicles-section.md` | 車両・設備紹介セクション |
-| 07 | `docs/07-company-section.md` | 会社概要セクション |
-| 08 | `docs/08-access-section.md` | アクセスセクション |
-| 09 | `docs/09-footer.md` | フッター |
-| 10 | `docs/10-seo-metadata.md` | SEO・メタデータ・構造化データ |
-| 11 | `docs/11-performance-optimization.md` | パフォーマンス最適化 |
-| 12 | `docs/12-responsive-final-check.md` | レスポンシブ対応・最終調整 |
+| # | ファイル | 内容 | 状態 |
+|---|---------|------|------|
+| 01 | `docs/01-design-system-foundation.md` | デザインシステム・基盤構築 | 完了 |
+| 02 | `docs/02-layout-header.md` | 共通レイアウト・固定ヘッダー | 完了 |
+| 03 | `docs/03-hero-section.md` | ヒーローセクション | 完了 |
+| 04 | `docs/04-services-section.md` | サービス紹介セクション | 完了 |
+| 05 | `docs/05-environment-section.md` | 環境への取り組みセクション | 完了 |
+| 06 | `docs/06-vehicles-section.md` | 車両・設備紹介セクション | 完了（写真素材待ち） |
+| 07 | `docs/07-company-section.md` | 会社概要セクション | 完了 |
+| 08 | `docs/08-access-section.md` | アクセスセクション | 完了 |
+| 09 | `docs/09-footer.md` | フッター | 完了 |
+| 10 | `docs/10-seo-metadata.md` | SEO・メタデータ・構造化データ | 未着手 |
+| 11 | `docs/11-performance-optimization.md` | パフォーマンス最適化 | 未着手 |
+| 12 | `docs/12-responsive-final-check.md` | レスポンシブ対応・最終調整 | 未着手 |
 
 ### Todo 運用ルール
 
