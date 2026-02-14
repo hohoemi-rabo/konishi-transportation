@@ -1,4 +1,6 @@
 import HeroSection from "@/components/sections/HeroSection";
+import ServicesSection from "@/components/sections/ServicesSection";
+import EnvironmentSection from "@/components/sections/EnvironmentSection";
 
 export default function Home() {
   return (
@@ -6,19 +8,9 @@ export default function Home() {
       <HeroSection />
 
       {/* 以下、各セクションのプレースホルダー */}
-      <section id="services" className="section-padding bg-white">
-        <div className="section-container">
-          <h2 className="section-title">サービス紹介</h2>
-          <p className="section-subtitle">事業内容・物流サービスの紹介</p>
-        </div>
-      </section>
+      <ServicesSection />
 
-      <section id="environment" className="section-padding bg-gradient-brand">
-        <div className="section-container">
-          <h2 className="section-title">環境への取り組み</h2>
-          <p className="section-subtitle">グリーン経営認証取得企業</p>
-        </div>
-      </section>
+      <EnvironmentSection />
 
       <section id="vehicles" className="section-padding bg-white">
         <div className="section-container">

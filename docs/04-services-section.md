@@ -25,9 +25,9 @@
 
 ## Todo
 
-- [ ] `src/components/sections/ServicesSection.tsx` 作成
-- [ ] サービスカードコンポーネント作成
-- [ ] Lucide Icons でアイコン選定・配置
-- [ ] スクロールフェードインアニメーション（Framer Motion）
-- [ ] レスポンシブグリッドレイアウト（1列 / 2列 / 4列）
-- [ ] セクションタイトル・リード文の配置
+- [x] `src/components/sections/ServicesSection.tsx` 作成
+- [x] サービスカードコンポーネント作成
+- [x] Lucide Icons でアイコン選定・配置
+- [x] スクロールフェードインアニメーション（Framer Motion）
+- [x] レスポンシブグリッドレイアウト（1列 / 2列 / 4列）
+- [x] セクションタイトル・リード文の配置
