@@ -24,10 +24,10 @@ Tailwind CSS のカスタム設定、カラーパレット、タイポグラフ�
 
 ## Todo
 
-- [ ] Tailwind CSS にブランドカラー（blue系パレット）を定義
-- [ ] フォント設定（`next/font/google` で日本語対応フォント + Geist）
-- [ ] グローバルCSS（`globals.css`）の整備（CSS変数、ベーススタイル）
-- [ ] ブレークポイントのカスタム設定確認（md: 768px, lg: 1024px）
-- [ ] 共通アニメーション用のユーティリティクラスまたはCSS定義
-- [ ] 必要な依存パッケージのインストール（framer-motion, lucide-react）
-- [ ] `html lang="ja"` の設定確認
+- [x] Tailwind CSS にブランドカラー（blue系パレット）を定義
+- [x] フォント設定（`next/font/google` で日本語対応フォント + Geist）
+- [x] グローバルCSS（`globals.css`）の整備（CSS変数、ベーススタイル）
+- [x] ブレークポイントのカスタム設定確認（md: 768px, lg: 1024px）
+- [x] 共通アニメーション用のユーティリティクラスまたはCSS定義
+- [x] 必要な依存パッケージのインストール（framer-motion, lucide-react）
+- [x] `html lang="ja"` の設定確認
