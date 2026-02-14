@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { Phone, ChevronDown } from "lucide-react";
 import dynamic from "next/dynamic";
 import { staggerContainer, staggerItem } from "@/lib/animations";
@@ -18,8 +19,24 @@ export default function HeroSection() {
       id="hero"
       className="relative flex items-center justify-center min-h-screen overflow-hidden"
     >
-      {/* 背景: グラデーション + 将来の写真差し替え対応 */}
-      <div className="absolute inset-0 bg-gradient-to-br from-brand-950 via-brand-900 to-brand-800" />
+      {/* 背景画像: モバイル用 */}
+      <Image
+        src="/images/hero-mobile.jpg"
+        alt=""
+        fill
+        priority
+        className="object-cover md:hidden"
+        sizes="100vw"
+      />
+      {/* 背景画像: デスクトップ用 */}
+      <Image
+        src="/images/hero-desktop.jpg"
+        alt=""
+        fill
+        priority
+        className="object-cover hidden md:block"
+        sizes="100vw"
+      />
 
       {/* パーティクルアニメーション（背景装飾） */}
       <div className="absolute inset-0">
@@ -27,7 +44,7 @@ export default function HeroSection() {
       </div>
 
       {/* オーバーレイ（テキスト可読性確保） */}
-      <div className="absolute inset-0 bg-brand-950/30" />
+      <div className="absolute inset-0 bg-brand-950/50" />
 
       {/* コンテンツ */}
       <motion.div
@@ -38,23 +55,23 @@ export default function HeroSection() {
       >
         <motion.p
           variants={staggerItem}
-          className="inline-block text-brand-300 text-sm md:text-base font-medium tracking-widest uppercase mb-6 border border-brand-400/30 rounded-full px-4 py-1.5"
+          className="inline-block text-white text-sm md:text-base font-medium tracking-widest mb-6 border border-white/30 rounded-full px-4 py-1.5 [text-shadow:0_1px_6px_rgba(0,0,0,0.8)]"
         >
           三重県四日市市の運送会社
         </motion.p>
 
         <motion.h1
           variants={staggerItem}
-          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6"
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6 [text-shadow:0_2px_12px_rgba(0,0,0,0.8),0_0_40px_rgba(0,0,0,0.4)]"
         >
           クリーンでハイテクな物流で、
           <br />
-          <span className="text-brand-300">次の社会を支える</span>
+          <span className="text-brand-200 [text-shadow:0_2px_12px_rgba(0,0,0,0.8),0_0_40px_rgba(0,0,0,0.4)]">次の社会を支える</span>
         </motion.h1>
 
         <motion.p
           variants={staggerItem}
-          className="text-white/70 text-base md:text-lg max-w-2xl mx-auto mb-10 leading-relaxed"
+          className="text-white/90 text-base md:text-lg max-w-2xl mx-auto mb-10 leading-relaxed [text-shadow:0_1px_8px_rgba(0,0,0,0.8),0_0_30px_rgba(0,0,0,0.3)]"
         >
           小西運送株式会社は、環境に配慮したクリーンな企業イメージと、
           最先端のテクノロジーを駆使した物流サービスで、
