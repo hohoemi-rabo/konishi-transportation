@@ -22,9 +22,9 @@ Google Maps 埋め込みと住所テキストを表示するセクション。
 
 ## Todo
 
-- [ ] `src/components/sections/AccessSection.tsx` 作成
-- [ ] Google Maps iframe 埋め込み（住所ベース）
-- [ ] 住所テキスト表示
-- [ ] iframe の遅延読み込み（`loading="lazy"`）
-- [ ] レスポンシブ対応（地図のアスペクト比維持）
-- [ ] スクロールフェードインアニメーション
+- [x] `src/components/sections/AccessSection.tsx` 作成
+- [x] Google Maps iframe 埋め込み（住所ベース）
+- [x] 住所テキスト表示
+- [x] iframe の遅延読み込み（`loading="lazy"`）
+- [x] レスポンシブ対応（地図のアスペクト比維持）
+- [x] スクロールフェードインアニメーション

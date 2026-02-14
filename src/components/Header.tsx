@@ -44,13 +44,16 @@ export default function Header() {
     (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
       e.preventDefault();
       closeMobileMenu();
-      const target = document.querySelector(href);
-      if (target) {
-        const headerOffset = 80;
-        const top =
-          target.getBoundingClientRect().top + window.scrollY - headerOffset;
-        window.scrollTo({ top, behavior: "smooth" });
-      }
+      // メニュー閉じアニメーション（200ms）完了後にスクロール実行
+      setTimeout(() => {
+        const target = document.querySelector(href);
+        if (target) {
+          const headerOffset = 80;
+          const top =
+            target.getBoundingClientRect().top + window.scrollY - headerOffset;
+          window.scrollTo({ top, behavior: "smooth" });
+        }
+      }, 300);
     },
     [closeMobileMenu]
   );
